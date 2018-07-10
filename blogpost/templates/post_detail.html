@@ -1,0 +1,48 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'css/blogpost.css' %}">
+
+
+</head>
+<body>
+<div class="page-header"
+     <div class="top-menu">
+         <h1><a href="{% url 'list_posts' %}">An App to post your blogs! </a></h1>
+    </div>
+
+</div>
+
+<div class="content container">
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="post">
+
+                <h1> {{ post.title }}</h1>
+
+                <div class="courier"
+                <h1> {{ post.text}}</h1>
+
+                <br>                 <br>
+                <br>                 <br>
+
+                </div>
+                <div class="courier"
+
+                <h1> Post published on {{ post.published_date}}</h1>
+                </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>

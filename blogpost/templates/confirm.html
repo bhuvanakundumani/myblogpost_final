@@ -1,0 +1,32 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/blogpost.css' %}">
+
+</head>
+<body>
+
+<div class="page-header"
+     <div class="top-menu">
+         <h1><a href="{% url 'list_posts' %}">An App to post your blogs! </a></h1>
+    </div>
+
+</div>
+
+<div class="content container">
+    <p><h1> Confirm that you want to delete the post::: {{ post.title}}</h1></p>
+
+    <form method="POST">
+          {% csrf_token %}
+
+    <button type="submit"> Delete</button>
+
+    </form>
+
+</div>
+</body>
+</html>

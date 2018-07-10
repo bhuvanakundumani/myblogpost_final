@@ -1,0 +1,67 @@
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'css/blogpost.css' %}">
+
+</head>
+<body>
+
+<div class="page-header"
+     <div class="top-menu">
+         <h1><a href="{% url 'list_posts' %}">An App to post your blogs! </a></h1>
+    </div>
+
+</div>
+
+
+<div class="content container">
+    <h1> Posts </h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="post">
+
+                    <ul>
+                    {% for post in posts %}
+
+                        <li>
+                        <p>  <a href="{%  url 'post_detail' post.id %}">  {{post.title}} </a> </p>
+
+                        <a href="{%  url 'update_post' post.id %}"> Edit </a> &nbsp &nbsp &nbsp
+
+                        <a href="{%  url 'delete_post' post.id %}"> Delete </a>
+
+                        <br>
+                        <br>
+                        </li>
+
+                    {% endfor %}
+                    </ul>
+
+                <br>
+
+                <br>
+
+
+
+               <h1> <a href = "{% url 'new_post'   %}"> Create New Post </a> </h1>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
