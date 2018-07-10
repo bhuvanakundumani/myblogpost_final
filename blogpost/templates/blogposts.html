@@ -20,9 +20,36 @@
 </div>
 
 
+
 <div class="content container">
+
+    <br>
+
+    {% if user.is_authenticated %}
+
+        Hello , Welcome  {{ user.username }}
+        <a href=" {% url 'logout' %}"> Logout </a>
+
+    {% else %}
+
+            Please Login to create /modify your posts.
+
+            <a href=" {% url 'login' %}"> Login </a>
+
+            <br><br>
+
+            If you haven't signed up already , <a href=" {% url 'signup' %}"> Signup </a>
+
+    {% endif %}
+
+
+
+    <br>
+
+
     <h1> Posts </h1>
 
+<div class="courier">
     <div class="row">
         <div class="col-md-8">
             <div class="post">
@@ -53,14 +80,16 @@
                <h1> <a href = "{% url 'new_post'   %}"> Create New Post </a> </h1>
 
 
+
+
+                 </div>
+
             </div>
 
         </div>
 
     </div>
-
 </div>
-
 
 
 </body>

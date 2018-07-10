@@ -16,12 +16,14 @@
 
 .courier {
     font-family: 'Courier';
-    font-size: 36pt;
+    font-size: 12pt;
 
 }
 
 h1 {
     font-family: 'Courier';
+    font-size: 16pt;
+
 }
 
 h2, h3, h4 {
